@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Tracker | ProFitness Gym</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2c3e50;
+      padding: 1rem;
+      color: white;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #e74c3c;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      font-weight: bold;
+      color: #333;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #27ae60;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #2ecc71;
+    }
+    .progress-history {
+      margin-top: 3rem;
+      background-color: #ecf0f1;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    .progress-history h3 {
+      color: #34495e;
+    }
+    .tips-section {
+      background-color: #f39c12;
+      padding: 1.5rem;
+      border-radius: 8px;
+      color: white;
+      margin-top: 3rem;
+    }
+    .tips-section ul {
+      padding-left: 20px;
+    }
+    .tips-section li {
+      margin-bottom: 0.8rem;
+    }
+    .tips-section h3 {
+      margin-top: 0;
+    }
+    .history-item {
+      background-color: #f9e0e0;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+    .history-item h4 {
+      margin-top: 0;
+      color: #c0392b;
+    }
+    .history-item p {
+      color: #7f8c8d;
+    }
+    /* New style fix for weekly goals text visibility */
+    .weekly-goals-container {
+      margin-top: 4rem;
+      padding: 1.5rem;
+      background-color: #ecf0f1;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .weekly-goals-container h2 {
+      color: #2980b9;
+    }
+    .weekly-goals-container p {
+      color: #34495e;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .weekly-goals-container ul {
+      list-style-type: disc;
+      padding-left: 40px;
+      text-align: left;
+      color: #34495e;
+    }
+    .weekly-goals-container li {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>ProFitness Gym - Progress Tracker</h1>
+  </header>
+
+  <!-- Progress Tracker Section -->
+  <div class="container fade-in" style="text-align: center;">
+    <h2>📊 Progress Tracker</h2>
+    
+    <!-- Progress Form -->
+    <form id="progressForm" onsubmit="saveProgress(event)" style="margin: 1rem auto; max-width: 600px;">
+      <div class="form-group">
+        <label for="logDate">Select Date:</label>
+        <input type="date" id="logDate" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" placeholder="Enter your weight" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="reps">Reps Done:</label>
+        <input type="number" id="reps" placeholder="Enter reps completed" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="calories">Calories Burned:</label>
+        <input type="number" id="calories" placeholder="Enter calories burned" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="muscleGroup">Muscle Group Focused:</label>
+        <select id="muscleGroup" required>
+          <option value="arms">Arms</option>
+          <option value="legs">Legs</option>
+          <option value="core">Core</option>
+          <option value="full-body">Full Body</option>
+        </select>
+      </div>
+      
+      <button type="submit">Save Progress</button>
+    </form>
+
+    <!-- Output Section -->
+    <div id="progressOutput" style="margin-top: 2rem;"></div>
+  </div>
+
+  <!-- Progress History Section -->
+  <div class="container progress-history">
+    <h3>🏅 Progress History</h3>
+    <div class="history-item">
+      <h4>March 21, 2025</h4>
+      <p><strong>Weight:</strong> 70kg</p>
+      <p><strong>Reps:</strong> 15</p>
+      <p><strong>Calories Burned:</strong> 250 kcal</p>
+      <p><strong>Muscle Group:</strong> Arms</p>
+    </div>
+    <div class="history-item">
+      <h4>March 20, 2025</h4>
+      <p><strong>Weight:</strong> 69kg</p>
+      <p><strong>Reps:</strong> 18</p>
+      <p><strong>Calories Burned:</strong> 270 kcal</p>
+      <p><strong>Muscle Group:</strong> Legs</p>
+    </div>
+    <div class="history-item">
+      <h4>March 19, 2025</h4>
+      <p><strong>Weight:</strong> 68kg</p>
+      <p><strong>Reps:</strong> 20</p>
+      <p><strong>Calories Burned:</strong> 300 kcal</p>
+      <p><strong>Muscle Group:</strong> Core</p>
+    </div>
+  </div>
+
+  <!-- Tips Section -->
+  <div class="container tips-section">
+    <h3>💡 Tips for Better Progress</h3>
+    <ul>
+      <li>Ensure proper form during exercises to avoid injury.</li>
+      <li>Gradually increase weights and reps to build strength effectively.</li>
+      <li>Track your progress consistently for the best results.</li>
+      <li>Rest adequately between workouts to allow muscle recovery.</li>
+      <li>Incorporate stretching exercises to improve flexibility.</li>
+      <li>Maintain a balanced diet to fuel your workouts and recovery.</li>
+      <li>Stay hydrated during your workouts for maximum performance.</li>
+      <li>Use a workout journal to track your progress over time.</li>
+      <li>Don't compare yourself to others; focus on your own improvement.</li>
+    </ul>
+  </div>
+
+  <!-- Weekly Progress Section -->
+  <div class="container weekly-goals-container">
+    <h2>📅 Track Your Weekly Goals</h2>
+    <p>Set weekly fitness goals to stay on track and see continuous improvement. Break down your large fitness goals into smaller, achievable tasks.</p>
+    <ul>
+      <li>Increase strength in arms by 5% this week.</li>
+      <li>Run 5 kilometers 3 times a week for better cardiovascular health.</li>
+      <li>Perform 15 minutes of stretching every day to increase flexibility.</li>
+      <li>Incorporate at least 300 calories of post-workout nutrition each day.</li>
+      <li>Rest for 48 hours between heavy lifting sessions.</li>
+    </ul>
+  </div>
+
+  <!-- Footer Section -->
+  <footer style="text-align: center; padding: 2rem; background-color: #2c3e50; color: white; margin-top: 4rem;">
+    <p>&copy; 2025 ProFitness Gym. All Rights Reserved.</p>
+    <p>Follow us on social media for more tips and updates!</p>
+  </footer>
+
+  <!-- Firebase and Script Files -->
+  <script src="firebase-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

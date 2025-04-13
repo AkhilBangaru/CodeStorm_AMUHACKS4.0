@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ProFitness Gym</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
   <header>
@@ -21,48 +21,26 @@
   <div class="container fade-in" style="text-align: center; margin-top: 2rem;">
     <h2 style="color: #ff4d4d; margin-bottom: 1.5rem;">Exercise Categories</h2>
 
-    <button onclick="window.location.href='exercises.html?category=arms'" style="
-        background-color: #9b59b6;
-        color: white;
-        padding: 1rem 2rem;
-        margin: 0.5rem;
-        border: none;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: background 0.3s ease;
-    ">
+    <button onclick="window.location.href='exercises.html?category=arms'" style="background-color: #9b59b6; color: white; padding: 1rem 2rem; margin: 0.5rem; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; transition: background 0.3s ease;">
       💪 Arm Exercises
     </button>
 
-    <button onclick="window.location.href='exercises.html?category=legs'" style="
-        background-color: #3498db;
-        color: white;
-        padding: 1rem 2rem;
-        margin: 0.5rem;
-        border: none;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: background 0.3s ease;
-    ">
+    <button onclick="window.location.href='exercises.html?category=legs'" style="background-color: #3498db; color: white; padding: 1rem 2rem; margin: 0.5rem; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; transition: background 0.3s ease;">
       🦵 Leg Exercises
     </button>
   </div>
 
   <!-- Emergency Button Section -->
   <div class="container fade-in" style="text-align: center; margin-top: 3rem;">
-    <button onclick="window.location.href='emergency.html'" style="
-        background-color: #e74c3c;
-        color: white;
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-    ">
+    <button onclick="window.location.href='emergency.html'" style="background-color: #e74c3c; color: white; padding: 1rem 2rem; font-size: 1.1rem; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s ease;">
       🚨 Emergency Help & First Aid
+    </button>
+  </div>
+
+  <!-- New Buttons for Injury Prevention and Progress Tracker -->
+  <div class="container fade-in" style="text-align: center; margin-top: 3rem;">
+    <button onclick="window.location.href='injury-prevention.html'" style="background-color: #1abc9c; color: white; padding: 1rem 2rem; margin: 0.5rem; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; transition: background 0.3s ease;">
+      🛡️ Injury Prevention
     </button>
   </div>
 
@@ -70,34 +48,73 @@
   <div class="container fade-in" style="text-align: center; margin-top: 3rem;">
     <h2 style="color: #ff4d4d; margin-bottom: 1.5rem;">Fitness Tools</h2>
 
-    <button onclick="window.location.href='calculator.html'" style="
-        background-color: #e67e22;
-        color: white;
-        padding: 1rem 2rem;
-        margin: 0.5rem;
-        border: none;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: background 0.3s ease;
-    ">
-      📏 BMI & BMR Calculator
-    </button>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <button onclick="window.location.href='calculator.html'" style="background-color: #e67e22; color: white; padding: 1rem 2rem; margin: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; transition: background 0.3s ease;">
+        📏 BMI & BMR Calculator
+      </button>
 
-    <button onclick="window.location.href='meal-planner.html'" style="
-        background-color: #27ae60;
-        color: white;
-        padding: 1rem 2rem;
-        margin: 0.5rem;
-        border: none;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: background 0.3s ease;
-    ">
-      🥗 Meal Planner & Calorie Tracker
+      <button onclick="window.location.href='meal-planner.html'" style="background-color: #27ae60; color: white; padding: 1rem 2rem; margin: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; transition: background 0.3s ease;">
+        🥗 Meal Planner & Calorie Tracker
+      </button>
+    </div>
+  </div>
+
+  <div class="container fade-in" style="text-align: center; margin-top: 3rem;">
+    <button onclick="window.location.href='progress.html'" style="background-color: #8e44ad; color: white; padding: 1rem 2rem; margin: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; transition: background 0.3s ease;">
+      📈 Progress Tracker
     </button>
   </div>
+
+  <div class="container fade-in" style="text-align: center; margin-top: 3rem;">
+    <button onclick="window.location.href='workout-planner.html'" style="background-color: #f39c12; color: white; padding: 1rem 2rem; margin: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer;">
+      📅 Workout Planner
+    </button>
+  </div>
+
+  <div class="container fade-in" style="text-align: center; margin-top: 3rem;">
+    <button onclick="window.location.href='goals.html'" style="background-color: #8e44ad; color: white; padding: 1rem 2rem; margin: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer;">
+      🎯 Set & Track Goals
+    </button>
+  </div>
+
+  <div class="container fade-in" style="text-align: center; margin-top: 3rem;">
+    <button onclick="window.location.href='mental-health.html'" style="background-color: #1abc9c; color: white; padding: 1rem 2rem; margin: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer;">
+      🧠 Mental Health Tips
+    </button>
+  </div>
+
+  <div class="container fade-in" style="text-align: center; margin-top: 3rem;">
+    <button onclick="window.location.href='faq.html'" style="background-color: #e67e22; color: white; padding: 1rem 2rem; margin: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer;">
+      ❓ FAQs & Tips
+    </button>
+  </div>
+
+  <div class="container fade-in" style="text-align: center; margin-top: 3rem;">
+    <button onclick="window.location.href='recipe-suggestions.html'" style="background-color: #f39c12; color: white; padding: 1rem 2rem; margin: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer;">
+      🍽️ Healthy Recipes
+    </button>
+  </div>
+
+  <div class="container fade-in" style="text-align: center; margin-top: 3rem;">
+    <h2>Search Exercises</h2>
+    <input type="text" id="searchInput" placeholder="Search for an exercise..." style="padding: 10px; width: 80%; max-width: 400px;">
+    <div id="searchResults" style="margin-top: 1rem;"></div>
+  </div>
+  
+  <div class="container fade-in" style="text-align: center; margin-top: 3rem;">
+    <h2>🏆 Fitness Leaderboard</h2>
+    <table id="leaderboard" style="margin: auto; width: 60%; border-collapse: collapse;">
+      <thead>
+        <tr style="background-color: #f39c12; color: white;">
+          <th style="padding: 10px;">Rank</th>
+          <th style="padding: 10px;">User</th>
+          <th style="padding: 10px;">Points</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  
 
   <!-- Routine Creation & Display (Only for Logged-In Users) -->
   <div class="container fade-in">
@@ -122,11 +139,6 @@
       <h3>Your Saved Routines</h3>
       <div id="savedRoutines"></div>
     </div>
-  </div>
-
-  <!-- Placeholder for other sections like Exercise Planner, First Aid, etc. -->
-  <div class="container fade-in">
-    <!-- Future content goes here -->
   </div>
 
   <!-- Firebase App & Script Initialization -->

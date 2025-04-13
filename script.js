@@ -216,3 +216,41 @@ document.addEventListener('DOMContentLoaded', () => {
     setupProfilePage();
     setupIndexPage();
 });
+const exercises = [
+    { name: "Push-Up", info: "Place hands shoulder-width apart. Lower body, then push back up." },
+    { name: "Squat", info: "Stand with feet shoulder-width. Lower your body and rise back." },
+    { name: "Plank", info: "Hold a push-up position while engaging core." },
+    { name: "Lunge", info: "Step forward and lower until both knees are 90°." },
+    { name: "Bicep Curl", info: "Lift dumbbells toward shoulders, then lower." }
+  ];
+  
+  document.getElementById("searchInput").addEventListener("input", function() {
+    const query = this.value.toLowerCase();
+    const results = exercises.filter(ex => ex.name.toLowerCase().includes(query));
+    const resultsDiv = document.getElementById("searchResults");
+    resultsDiv.innerHTML = results.map(ex => `<strong>${ex.name}</strong>: ${ex.info}`).join("<br><br>");
+  });
+
+  const leaderboardData = [
+    { name: "Alice", points: 1200 },
+    { name: "Bob", points: 950 },
+    { name: "Charlie", points: 870 },
+    { name: "Diana", points: 700 }
+  ];
+  
+  function renderLeaderboard() {
+    const tbody = document.querySelector("#leaderboard tbody");
+    tbody.innerHTML = "";
+    leaderboardData
+      .sort((a, b) => b.points - a.points)
+      .forEach((user, i) => {
+        const row = `<tr>
+          <td style="padding: 10px;">${i + 1}</td>
+          <td style="padding: 10px;">${user.name}</td>
+          <td style="padding: 10px;">${user.points}</td>
+        </tr>`;
+        tbody.innerHTML += row;
+      });
+  }
+  renderLeaderboard();
+  
